@@ -11,7 +11,7 @@ module.exports = defineConfig({
     baseURL: 'https://www.linkedin.com',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: 'on',
   },
   projects: [
     {
