@@ -1,11 +1,11 @@
-# Teste de login com Cypress
+# Teste de login com Playwright
 
-Testes automatizados de login do LinkedIn usando Cypress e Playwright.
+Teste automatizado de login do LinkedIn usando Playwright nos navegadores Chrome e Edge.
 
 ## Pré-requisitos
 
 - Node.js instalado
-- Dependências instaladas com `npm install`
+- Playwright instalado no projeto
 - Uma conta de teste do LinkedIn
 
 ## Configuração
@@ -21,44 +21,39 @@ Não inclua credenciais em arquivos versionados.
 
 ## Execução
 
-Execute o teste em modo headless:
-
-```powershell
-npx cypress run --spec .\login.cy.js
-```
-
-Para executar com Playwright:
+Defina as credenciais e execute o teste no Chrome:
 
 ```powershell
 $env:LINKEDIN_EMAIL = "seu-email"
 $env:LINKEDIN_PASSWORD = "sua-senha"
-npm run test:playwright
+npx playwright test --project=chrome
 ```
 
-O comando acima executa nos navegadores Chrome e Edge. Para executar apenas um deles:
+Para executar nos dois navegadores:
 
 ```powershell
-npm run test:playwright:chrome
-npm run test:playwright:edge
+npx playwright test
 ```
 
-Para abrir a interface interativa do Playwright:
+Para executar apenas no Edge:
 
 ```powershell
-npm run test:playwright:ui
+npx playwright test --project=edge
 ```
 
-Ou abra a interface gráfica:
+Para abrir a interface interativa:
 
 ```powershell
-npx cypress open
+npx playwright test --ui
+```
+
+Os vídeos são salvos em `test-results/`, inclusive quando o teste passa. O relatório HTML pode ser aberto com:
+
+```powershell
+npx playwright show-report
 ```
 
 ## Estrutura
 
-- `login.cy.js`: especificação do teste.
-- `index.js`: Page Object da tela de login.
-- `elements.js`: seletores da tela de login.
-- `cypress.config.js`: configuração do Cypress.
 - `playwright.config.js`: configuração do Playwright.
 - `playwright/login.spec.js`: teste de login do Playwright.
