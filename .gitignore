@@ -1,0 +1,12 @@
+*
+!.gitignore
+!package.json
+!package-lock.json
+!index.js
+!elements.js
+!cypress.config.js
+!login.cy.js
+!README.md
+!playwright.config.js
+!playwright/
+!playwright/*.spec.js
