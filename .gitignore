@@ -1,12 +1,19 @@
-*
-!.gitignore
-!package.json
-!package-lock.json
-!index.js
-!elements.js
-!cypress.config.js
-!login.cy.js
-!README.md
-!playwright.config.js
-!playwright/
-!playwright/*.spec.js
+# Credenciais e configuracoes locais
+.env
+.env.*
+!.env.example
+
+# Dependencias
+node_modules/
+
+# Relatorios e artefatos de testes
+playwright-report/
+test-results/
+cypress/videos/
+cypress/screenshots/
+playwright_login/
+
+# Logs locais
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
